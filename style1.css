@@ -8,3 +8,8 @@ text-decoration: none;
 }
 
 p.resizeimage img { border-color: #bdb76b; width: 100%; }
+
+.twitter-timeline {
+position: absolute;
+left:100;
+}
