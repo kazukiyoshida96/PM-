@@ -1,8 +1,37 @@
-﻿<?php
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-style-Type" dontent="text/css">
+		<title>PM学科専用闇キャンパスポータル</title>
+		<link rel="stylesheet"href="style1.css" type="text/css">
+		<style type="text/css">a { text-decoration: none; }</style>
+
+<title>検索結果</title>
+<meta charset="utf-8">
+</head>
+<body>
+
+	<body link="#000000" vlink="#000000" alink="000000">
+
+		<table width="100%" align="center" frame="void" rules="none" border="2"  bordercolor="#bdb76b" bgcolor="#ffffff" >
+			<tr>
+				<td align="center" valign="middle">
+					<a href="ArtifactsMenu.php"><font size="7"><b>検索結果</b></font></a>
+				</td>
+			</tr>
+		</table>
+
+
+
+
+
+<?php
 header("Content-type: text/html; charset=utf-8");
 
 if(empty($_POST)) {
-	header("Location: ArtifactsMenu.htm");
+	header("Location: ArtifactsMenu.php");
 	exit();
 }else{
 	//名前入力判定
@@ -49,55 +78,44 @@ if(count($errors) === 0){
 	}
 }
 
+
+
+
+ if (count($errors) === 0): 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
+<font color='000000'><p align='center'><?=htmlspecialchars($yourname, ENT_QUOTES, 'UTF-8')."さんで検索。"?></p>
+<p align='center'>検索結果は<b><?=$row_count?></b>件です。</p></font>
 
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="Content-style-Type" dontent="text/css">
-		<title>PM学科専用闇キャンパスポータル</title>
-		<link rel="stylesheet"href="style1.css" type="text/css">
-		<style type="text/css">a { text-decoration: none; }</style>
+<table align='center' width='1000px' border='1'>
 
-<title>検索結果</title>
-<meta charset="utf-8">
-</head>
-<body>
+<tr align='center'>
+<td><font color='000000'>演習名、所属名</font></td></tr></table>
 
-	<body link="#ff0000" vlink="#ff0000" alink="ff0000">
 
-		<table width="100%" align="center" frame="void" rules="none" border="2"  bordercolor="#bdb76b" bgcolor="#000000" >
-			<tr>
-				<td align="center" valign="middle">
-					<a href="ArtifactsMenu.htm"><font size="7"><b>検索結果</b></font></a>
-				</td>
-			</tr>
-		</table
 
-<?php if (count($errors) === 0): ?>
 
-<font color="ff0000"><p><?=htmlspecialchars($yourname, ENT_QUOTES, 'UTF-8')."さんで検索。"?></p>
-<p>検索結果は<?=$row_count?>件です。</p></font>
 
-<table align="center" width="1000px" border='1'>
 
-<tr align="center"><!--<td><font color="ff0000">id</font></td>-->
-<td><font color="ff0000">演習名、所属名</font></td></tr>
 
 <?php 
 foreach($rows as $row){
 ?>
- 
-<tr align="center"><font color="ff0000"> 
-	<!--<td>c$row['id']?></td>-->
-	"<td><a href=".$row['url']."</a>"
-		<?=htmlspecialchars($row['name'],ENT_QUOTES,'UTF-8')?></td></font></a>
-</tr> 
+
+<table align='center' width='1000px' border='1'>
+<tr align='center'><font color='000000'> 
+	<td><a href=".$row["url"].">
+		".<?=htmlspecialchars($row["name"],ENT_QUOTES,'UTF-8')?>."</a></td></font></a>
+</tr> </table>
+
 <?php 
 } 
 ?>
+
+
+
+
+
 
 <?php elseif(count($errors) > 0): ?>
 <?php
@@ -107,6 +125,22 @@ foreach($errors as $value){
 ?>
 <?php endif; ?>
 
+<br>
+<br>
+
+<form align="center" action="kensaku.php" method="post">
+キーワードを入力してください：<input type="text" name="yourname">
+<input type="submit" value="検索する">
+</form>
+
+<br>
+<br>
+
+<table width="800" align="center" rules="all" frame="all" border="1" bgcolor="#dcdcdc">
+<tr>
+<td align="center"><a href="index.htm"><font size="7" color="000000">　トップページへ</font></a></td>
+</tr>
+</table>
 
 
 </body>

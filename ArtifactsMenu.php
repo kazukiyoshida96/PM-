@@ -9,51 +9,43 @@
 
 </head>
 
-<body>
+<body link="#000000" vlink="#000000" alink="000000">
 
 
 
-
-
-
-
-
-
-
-<table width="1000" align="center" frame="void" rules="none" border="2"  bordercolor="#bdb76b" bgcolor="#000000" >
+<table width="1000" align="center" frame="void" rules="none" border="2"  bordercolor="#bdb76b" bgcolor="#ffffff" >
 <tr>
 <td align="center" valign="middle">
-<font size="7"color="#ff0000"><b>PM学科専用闇キャンパスポータル</b></font>
+<font size="7"color="#000000"><b>PM学科専用闇キャンパスポータル</b></font>
 </td>
 </tr>
 </table>
 
-
-<form action="kensaku.php" method="post">
-検索：<input type="text" name="yourname">
-<input type="submit" value="検索する">
-</form>
-
-<br>
-<br>
 <br>
 
 		<table width="1000px" align="center" rules="none" frame="void" border="none" bgcolor="transparent">
 			<tr>
 				<th>
-					<font size="6"color="ff0000"><b>過去の演習の成果物のメニュー</b></font>
+					<font size="6"color="000000"><b>過去の演習の成果物のメニュー</b></font>
 				</th>
 			</tr>
 		</table>
+<hr>
 <br>
+
+<form align="center" action="kensaku.php" method="post">
+キーワードを入力してください：<input type="text" name="yourname">
+<input type="submit" value="検索する">
+</form>
+
+<br>
+
 
 <table width="800" height="50">
 			<tr>
-				<td align="center"><font size="7" color="ff0000"><b>1年次・オリエンテーション<b></font></td>
+				<td align="center"><font size="7" color="000000"><b>1年次・オリエンテーション<b></font></td>
 			</tr>
 		</table>
-
-
 
 <?php
 //データベース接続設定
@@ -79,128 +71,88 @@ $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
   //取り出したデータは連想配列として参照できる
 foreach ($result as $person) {
 
-print "<table><tr><th>id</th><th>名前</th></tr>";
+print "<table align='center' width='2000px'>";
 
-print "<tr><td></td><td><a href = ".$person["url"].">".$person["name"]."</a></td></tr></table>";
+print "<tr align='center'><td><font size='7' color='000000'><b><a href = ".$person["url"].">".$person["name"]."</a></td></font></tr></table>";
 }
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table width="1400" height="50">
-			<tr>
-				<td align="right"><a href="Artifacts1.htm"><font size="7" color="ff0000"><b>〇〇研究室　〇〇グループ<b></font></a></td>
-
-			</tr>
-		</table>
-
 <br>
-<table width="1400" height="50">
-			<tr>
-				<td align="right"><a href="Artifacts1.htm"><font size="7" color="ff0000"><b>〇〇研究室　〇〇グループ<b></font></a></td>
-
-			</tr>
-		</table>
-
-
-<br>
-
-
-
-
-
-
-
-
 
 
 <table width="800" height="50">
 			<tr>
-				<td align="center"><font size="7" color="ff0000"><b>2年前期・PM実験<b></font></td>
+				<td align="center"><font size="7" color="000000"><b>2年前期・PM実験<b></font></td>
 			</tr>
 		</table>
 
-<table width="1400" height="50">
-			<tr>
-				<td align="right"><a href="Artifacts2.htm"><font size="7" color="ff0000"><b>〇〇研究室　〇〇グループ<b></font></a></td>
+<?php
+//prefテーブルからすべてのデータを取り出すSQL文を作る
+$sql = "SELECT name, url FROM seika  LIMIT 39 OFFSET 16";
+$prepare = $db->prepare($sql);
+$prepare->execute();
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+//SQLクエリ(問い合わせ)をデータベースに発行する
+//問い合わせ結果が$rstに入ってくる
+//問い合わせた結果（データの集合）を1件ずつ取り出す
+//データが無くなったらwhileループ終了
+  //取り出したデータの各フィールドの値を表示させる
+  //取り出したデータは連想配列として参照できる
+foreach ($result as $person) {
 
-			</tr>
-		</table>
+print "<table align='center' width='2000px'>";
+
+print "<tr align='center'><td><font size='7' color='000000'><b><a href = ".$person["url"].">".$person["name"]."</a></td></font></tr></table>";
+}
+?>
 
 <br>
 
-<table width="1400" height="50">
-			<tr>
-				<td align="right"><a href="Artifacts1.htm"><font size="7" color="ff0000"><b>〇〇研究室　〇〇グループ<b></font></a></td>
-
-			</tr>
-		</table>
-
-
-
-
-<br>
 
 <table width="800" height="50">
 			<tr>
-				<td align="center"><font size="7" color="ff0000"><b>2年後期・PM演習<b></font></td>
+				<td align="center"><font size="7" color="000000"><b>2年後期・PM演習<b></font></td>
 			</tr>
 		</table>
 
-<table width="1400" height="50">
-			<tr>
-				<td align="right"><a href="Artifacts1.htm"><font size="7" color="ff0000"><b>〇〇研究室　〇〇グループ<b></font></a></td>
+<?php
+//prefテーブルからすべてのデータを取り出すSQL文を作る
+$sql = "SELECT name, url FROM seika  LIMIT 39 OFFSET 55";
+$prepare = $db->prepare($sql);
+$prepare->execute();
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+//SQLクエリ(問い合わせ)をデータベースに発行する
+//問い合わせ結果が$rstに入ってくる
+//問い合わせた結果（データの集合）を1件ずつ取り出す
+//データが無くなったらwhileループ終了
+  //取り出したデータの各フィールドの値を表示させる
+  //取り出したデータは連想配列として参照できる
+foreach ($result as $person) {
 
-			</tr>
-		</table>
+print "<table align='center' width='2000px'></tr>";
+
+print "<tr align='center'><td><font size='7' color='000000'><b><a href = ".$person["url"].">".$person["name"]."</a></td></font></tr></table>";
+}
+?>
 
 <br>
-<table width="1400" height="50">
-			<tr>
-				<td align="right"><a href="Artifacts1.htm"><font size="7" color="ff0000"><b>〇〇研究室　〇〇グループ<b></font></a></td>
+<br>
 
-			</tr>
-		</table>
+<hr>
 
+<br>
 
+<form align="center" action="kensaku.php" method="post">
+キーワードを入力してください：<input type="text" name="yourname">
+<input type="submit" value="検索する">
+</form>
 
 <br>
 <br>
-<br>
 
-
-<table width="800" align="center" rules="all" frame="all" border="1" bgcolor="#000000">
+<table width="800" align="center" rules="all" frame="all" border="1" bgcolor="#dcdcdc">
 <tr>
-<td align="center"><a href="index.htm"><font size="7" color="ff0000">　トップページへ</font></a></td>
+<td align="center"><a href="index.htm"><font size="7" color="000000">　トップページへ</font></a></td>
 </tr>
 </table>
 <br>
