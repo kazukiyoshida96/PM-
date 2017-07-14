@@ -2,7 +2,7 @@
 header("Content-type: text/html; charset=utf-8");
 
 if(empty($_POST)) {
-	header("Location: index.htm");
+	header("Location: ArtifactsMenu.htm");
 	exit();
 }else{
 	//名前入力判定
@@ -71,7 +71,7 @@ if(count($errors) === 0){
 		<table width="100%" align="center" frame="void" rules="none" border="2"  bordercolor="#bdb76b" bgcolor="#000000" >
 			<tr>
 				<td align="center" valign="middle">
-					<a href="index.htm"><font size="7"><b>検索結果</b></font></a>
+					<a href="ArtifactsMenu.htm"><font size="7"><b>検索結果</b></font></a>
 				</td>
 			</tr>
 		</table
@@ -88,10 +88,11 @@ if(count($errors) === 0){
 
 <?php 
 foreach($rows as $row){
-?> 
+?>
+ 
 <tr align="center"><font color="ff0000"> 
-	<!--<td><?=$row['id']?></td>-->
-	<td><a href="<?h($row['url'])?>">
+	<!--<td>c$row['id']?></td>-->
+	"<td><a href=".$row['url']."</a>"
 		<?=htmlspecialchars($row['name'],ENT_QUOTES,'UTF-8')?></td></font></a>
 </tr> 
 <?php 

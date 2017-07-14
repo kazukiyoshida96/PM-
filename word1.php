@@ -10,8 +10,8 @@ $dbPass = '';
 $db = new PDO($dsn, $dbUser, $dbPass);
 
 //検索実行
-header('Content-type: application/pdf');
-$sql = "select * from test where id=1";
+header('Content-type: application/msword');
+$sql = "select * from test where id=0";
 $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
 
