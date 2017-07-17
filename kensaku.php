@@ -94,7 +94,7 @@ if(count($errors) === 0){
 <table align='center' width='1000px' border='1'>
 
 <tr align='center'>
-<td><font color='000000'>演習名、所属名</font></td></tr></table>
+<td><font color='000000'><b>演習名、所属名<b></font></td></tr></table>
 
 
 
@@ -110,7 +110,7 @@ foreach($rows as $row){
 <tr align='center'><font color='000000'>
 	<td>
 
-<?php print "<a href = ".$row["url"].">".$row["name"]."</a>";
+<?php print "<h2><a href = ".$row["url"].">".$row["name"]."</a></h2>";
 ?>
 </tr> </table>
 

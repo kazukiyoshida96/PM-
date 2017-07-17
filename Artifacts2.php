@@ -56,7 +56,7 @@ foreach ($result as $person)
 	<table width="1000px" align="center" rules="none" frame="void" border="none" bgcolor="transparent">
 			<tr>
 				<th>
-					<font size="6"color="000000"><b>1年次・オリエンテーション</b></font>
+					<font size="6"color="000000"><b>2年前期・PM実験</b></font>
 				</th>
 
 			</tr>
@@ -67,7 +67,9 @@ foreach ($result as $person)
 				<th>
 					<font size="6"color="000000"><b><?php echo $person['teacher'];?>研究室</b></font>
 				</th>
-
+<th>
+					<font size="6"color="000000"><b><?php echo $person['gr'];?>グループ</b></font>
+				</th>
 
 			</tr>
 		</table>
