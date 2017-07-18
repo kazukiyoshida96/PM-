@@ -1,22 +1,23 @@
 <?php
-$url = "127.0.0.1";
-$user = "test";
-$pass = "pass";
-$db = "sample1";
-
-$link = mysql_connect( $url, $user, $pass ) or die("MySQLã¸ã®æŽ¥ç¶šã«å¤±æ•—ã—ã¾ã—ãŸã€‚");
-$sdb = mysql_select_db( $db, $link ) or die("ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®é¸æŠžã«å¤±æ•—ã—ã¾ã—ãŸã€‚");
-$sql = "SELECT * FROM sample1.posts";
-$result = mysql_query( $sql, $link ) or die("ã‚¯ã‚¨ãƒªã®é€ä¿¡ã«å¤±æ•—ã—ã¾ã—ãŸã€‚");
-$rows = mysql_num_rows( $result );
-mysql_close( $link ) or die("MySQLåˆ‡æ–­ã«å¤±æ•—ã—ã¾ã—ãŸã€‚");
-
-if($rows){
-    while($row = mysql_fetch_array($result)) {
-        header( "Content-Type: ".$row['mie'] );
-        echo $row['imgdat'];
-        header( "Content-Type: ".$row['mie'] );
-        echo $row['imgdat'];
-    }
+define( 'DB_HOST', 'ƒzƒXƒg–¼‚ð‹Lqi—á‚¦‚Îlocalhostj' );
+define( 'DB_USER', 'ƒ†[ƒU[–¼‚ð‹Lqi—á‚¦‚Îrootj' );
+define( 'DB_PASS', 'ƒpƒXƒ[ƒh‚ð‹Lq' );
+define( 'DB_NAME', 'ƒf[ƒ^ƒx[ƒX–¼‚ð‹Lq' );
+{
+  // ƒf[ƒ^ƒx[ƒX‚ÉÚ‘±
+  $DB = mysql_connect( DB_HOST, DB_USER, DB_PASS );
+  mysql_select_db( DB_NAME, $DB );
+ 
+  // •\Ž¦‚·‚éƒCƒ[ƒW‚ÌID‚ðƒpƒ‰ƒ[ƒ^‚©‚çŽæ“¾
+  $id = isset( $_GET['id'] ) ? intval( $_GET['id'] ) : 0;
+  $sql = sprintf( 'SELECT * FROM temp_upload WHERE id = %d', $id );
+ 
+  // ƒf[ƒ^‚ÌŽæ“¾
+  $result = mysql_query( $sql );
+  $row = mysql_fetch_array( $result, MYSQL_ASSOC );
+ 
+  // ‰æ‘œ‚ðo—Í
+  header( 'Content-Type: image/jpeg' );
+  print $row['image'];
 }
 ?>
