@@ -5,6 +5,16 @@
     <title>すべてのつぶやき</title>
   </head>
   <body>
+  	<body link="#000000" vlink="#000000" alink="000000">
+
+		<table width="100%" align="center" frame="void" rules="none" border="2"  bordercolor="000000" >
+			<tr>
+				<td align="center" valign="middle">
+					<a href="index.htm"><font size="7"><b>PM学科専用闇キャンパスポータルへようこそ</b></font></a>
+				</td>
+			</tr>
+		</table>
+		<br>
     <div>
       <?php
       # データベース設定☆レシピ260☆（データベースに接続したい）を読み込みます☆レシピ041☆（他のファイルを取り込んで利用したい）。

@@ -31,7 +31,7 @@
 <nav id="nav">
 <ul>
 <li><a href="showall2.php">すべての登録画像画面</a></li>
-<li><a href="hyoushi2.php">個人時間割作成画面</a></li>
+<li><a href="hyoushi2.php">時間割登録画面</a></li>
 <li><a href="hyoushi1.php">登録画面</a></li
 <ul>
 </nav>
