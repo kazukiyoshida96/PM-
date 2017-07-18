@@ -27,7 +27,7 @@
 
 
 
-<?php
+<p align='center'><?php
 
 //エラー非表示
 error_reporting(0);
@@ -116,7 +116,7 @@ foreach($rows as $row){
 
 <?php
 }
-?>
+?></p>
 
 
 
