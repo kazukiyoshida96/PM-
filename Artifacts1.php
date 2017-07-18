@@ -91,6 +91,17 @@ foreach ($result as $person)
 			</tr>
 		</table>
 
+		<table align="center">
+			<tr>
+				<td align="center">
+<?php
+$mime = $person['mime'];
+$image = base64_encode($person['img']);
+echo "<img src='data:${mime};base64,${image}'>";
+?>
+			</tr>
+		</table>
+
  <br>
  <br>
 
