@@ -34,7 +34,7 @@ foreach ($result as $person)
 <table width="1000" align="center" frame="void" rules="none" border="2"  bordercolor="#bdb76b" bgcolor="#ffffff" >
 <tr>
 <td align="center" valign="middle">
-<font size="7"color="#000000"><b>PM学科専用闇キャンパスポータル</b></font>
+<font size="7"color="#000000"><b>PM学科専用闇</b></font>
 </td>
 </tr>
 </table>

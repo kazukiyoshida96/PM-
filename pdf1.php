@@ -3,16 +3,16 @@ header('Content-type: application/pdf');
 
 //データベース接続設定
 $dbServer = '127.0.0.1';
-$dbName = 'blobtest';
+$dbName = 'kensaku';
 $dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
-$dbUser = 'root';
-$dbPass = '';
+$dbUser = 'k';
+$dbPass = '12345';
 
 //データベースへの接続
 $db = new PDO($dsn, $dbUser, $dbPass);
 
 
-$sql = "select data from test where id=1";
+$sql = "select pdf from sensei where id=1";
  
 $result = mysql_query($sql);
  
