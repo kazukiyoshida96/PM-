@@ -4,7 +4,7 @@ $dbServer = '127.0.0.1';
 $dbUser = 'testuser';
 $dbPass = 'pass';
 $dbName = 'mydb';
-// データベース設定（サーバで公開するとき）
+//データベース設定（サーバで公開するとき）
 //$dbServer = '127.0.0.1';
 //$dbUser = $_SERVER['MYSQL_USER'];
 //$dbPass = $_SERVER['MYSQL_PASSWORD'];
