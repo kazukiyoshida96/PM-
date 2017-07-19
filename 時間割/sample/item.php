@@ -5,6 +5,12 @@
     <title>つぶやき</title>
   </head>
   <body>
+   <table width="1200" align="center" rules="all" frame="all" border="1" bgcolor="#dcdcdc">
+<tr>
+<td align="center"><a href="showall2.php"><font size="7" color="000000">時間割表示画面</font></a></td>
+<td align="center"><a href="index.htm"><font size="7" color="000000">　トップページへ</font></a></td>
+</tr>
+</table>
     <div>
       <?php
       if (isset($_GET['id'])) {
@@ -42,5 +48,6 @@
       }
       ?>
     </div>
+   
   </body>
 </html>

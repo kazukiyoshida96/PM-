@@ -2,19 +2,49 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title>すべてのつぶやき</title>
+    <title>時間割表示画面</title>
   </head>
-  <body>
+  <body　link="000000" vlink="#000000" alink="000000">
+
+
+
+<table width="1000" align="center" frame="void" rules="none" border="2"  bordercolor="#bdb76b" bgcolor="#ffffff" >
+<tr>
+<td align="center" valign="middle">
+<font size="7"color="#000000"><b>PM学科専用闇キャンパスポータル</b></font>
+</td>
+</tr>
+</table>
+
+<br>
+
+		<table width="1000px" align="center" rules="none" frame="void" border="none" bgcolor="transparent">
+			<tr>
+				<th>
+				
+					<font size="6"color="000000"><b>【すべての登録画像表示画面】</b></font>
+				</th>
+			</tr>
+		</table>
+<hr>
+<br>
   <nav id="nav">
 <ul>
-<li><a href="showall2.php">登録画像画面</a></li>
-<li><a href="hyoushi2.php">個人時間割作成画面</a></li>
-<li><a href="hyoushi1.php">登録画面</a></li>
-
+<table align="center"  height="50">
+			<tr>
+			
+				<td align="center"><font size="7" color="000000"><b><a href="hyoushi2.php">時間割登録画面</a><b></font></td>
+			</tr>
+			<tr>	
+				<td align="center"><font size="7" color="000000"><b><a href="hyoushi1.php">登録画面</a><b></font></td>
+			</tr>
+		</table>
+		
+   
 <ul>
 </nav>
 
-    <div>
+    <div align="center">
       <?php
       # データベース設定☆レシピ260☆（データベースに接続したい）を読み込みます☆レシピ041☆（他のファイルを取り込んで利用したい）。
       require_once 'database_conf.php';
@@ -35,7 +65,7 @@
         foreach ($result as $tweet) {
           $id = $tweet['id'];
           $body = h($tweet['body']);
-          echo "<li><a href='item.php?id=${id}'>${id}</a>：${body}</li>";
+          echo "<a href='item.php?id=${id}'>${id}</a>：${body}";
         }
         echo '</ul>';
       } catch (PDOException $e) {
@@ -44,5 +74,6 @@
       }
       ?>
     </div>
+    
   </body>
 </html>

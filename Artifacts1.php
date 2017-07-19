@@ -91,7 +91,9 @@ foreach ($result as $person)
 			</tr>
 		</table>
 
-		<table align="center">
+ <br>
+ <br>
+		<table align="center"  height="50">
 			<tr>
 				<td align="center">
 <?php
@@ -101,10 +103,6 @@ echo "<img src='data:${mime};base64,${image}'>";
 ?>
 			</tr>
 		</table>
-
- <br>
- <br>
-
 
 <br>
 <br>
