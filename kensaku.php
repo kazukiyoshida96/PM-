@@ -27,7 +27,7 @@
 
 
 
-<?php
+<p align="center"><?php
 
 //エラー非表示
 error_reporting(0);
@@ -86,7 +86,7 @@ if(count($errors) === 0){
 
 
  if (count($errors) === 0):
-?>
+?></p>
 
 <font color='000000'><p align='center'><?=htmlspecialchars($yourname, ENT_QUOTES, 'UTF-8')."さんで検索。"?></p>
 <p align='center'>検索結果は<b><?=$row_count?></b>件です。</p></font>
